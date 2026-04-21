@@ -36,13 +36,13 @@ Developers using Claude Code get motivational, severity-tiered encouragement aut
 - [x] IMPLEMENTATION-PLAN.md — complete technical spec for all 8 build phases — Phase 1
 - [x] Project scaffold — all source files wired, tier phrases authored — Phase 2
 - [x] Prompt classifier with 5-tier desperation scoring — 16 tests, all passing — Phase 3
+- [x] Session tracker — 6 functions, real fs I/O, streak storage primitives — Phase 4
 
 ### Active (In Progress)
-- [ ] Phase 4: Session Tracker — `session.js` with read/write helpers and streak tracking
+- [ ] Phase 5: Hook — `hook.js` implementing full `UserPromptSubmit` protocol
 
 ### Planned (Next)
-- Phase 5: Hook — `hook.js` implementing full `UserPromptSubmit` protocol
-- Phase 5: Hook — `hook.js` implementing full `UserPromptSubmit` protocol
+- Phase 6: Report Renderer — `report.js` with box-drawing output
 - Phase 6: Report Renderer — `report.js` with box-drawing output
 - Phase 7: CLI — `cli.js` handling install/uninstall/report subcommands
 - Phase 8: Launch — README, end-to-end verification, v1.0.0 tag
@@ -81,6 +81,8 @@ Developers using Claude Code get motivational, severity-tiered encouragement aut
 | `node:test` for unit testing | Built-in, zero extra dependency | 2026-04-20 | Active |
 | Pin neutral timestamp in tier tests | `time_of_day` uses system clock as fallback; tests must provide noon context to stay deterministic at any hour | 2026-04-21 | Active |
 | Imperative verb eligibility: first word only | `words[0]` check prevents false matches like "don't debug" | 2026-04-21 | Active |
+| `filePleaCounts` keyed by `cwd` for now | stdin provides cwd; filename extraction from promptText is a deferred decision | 2026-04-21 | Active |
+| Streak increment logic lives in report.js | SessionEnd is the right moment to update streak; session.js provides storage only | 2026-04-21 | Active |
 
 ## Success Metrics
 
@@ -111,4 +113,4 @@ Developers using Claude Code get motivational, severity-tiered encouragement aut
 
 ---
 *PROJECT.md — Updated when requirements or context change*
-*Last updated: 2026-04-21 after Phase 3*
+*Last updated: 2026-04-21 after Phase 4*
