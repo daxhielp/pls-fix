@@ -37,13 +37,13 @@ Developers using Claude Code get motivational, severity-tiered encouragement aut
 - [x] Project scaffold — all source files wired, tier phrases authored — Phase 2
 - [x] Prompt classifier with 5-tier desperation scoring — 16 tests, all passing — Phase 3
 - [x] Session tracker — 6 functions, real fs I/O, streak storage primitives — Phase 4
+- [x] UserPromptSubmit hook — stdin parse, classify, inject phrase, dry-run, session update — Phase 5
 
 ### Active (In Progress)
-- [ ] Phase 5: Hook — `hook.js` implementing full `UserPromptSubmit` protocol
+- [ ] Phase 6: Report Renderer — `report.js` with box-drawing output
 
 ### Planned (Next)
-- Phase 6: Report Renderer — `report.js` with box-drawing output
-- Phase 6: Report Renderer — `report.js` with box-drawing output
+- Phase 7: CLI — `cli.js` handling install/uninstall/report subcommands
 - Phase 7: CLI — `cli.js` handling install/uninstall/report subcommands
 - Phase 8: Launch — README, end-to-end verification, v1.0.0 tag
 
@@ -83,6 +83,8 @@ Developers using Claude Code get motivational, severity-tiered encouragement aut
 | Imperative verb eligibility: first word only | `words[0]` check prevents false matches like "don't debug" | 2026-04-21 | Active |
 | `filePleaCounts` keyed by `cwd` for now | stdin provides cwd; filename extraction from promptText is a deferred decision | 2026-04-21 | Active |
 | Streak increment logic lives in report.js | SessionEnd is the right moment to update streak; session.js provides storage only | 2026-04-21 | Active |
+| hook.js exits 0 on all paths | Hooks must be non-blocking — JSON parse error, classify error, any failure → exit 0 silently | 2026-04-21 | Active |
+| stdout is injection-only channel | No debug output ever written to stdout in hook.js — only the tier phrase or nothing | 2026-04-21 | Active |
 
 ## Success Metrics
 
@@ -113,4 +115,4 @@ Developers using Claude Code get motivational, severity-tiered encouragement aut
 
 ---
 *PROJECT.md — Updated when requirements or context change*
-*Last updated: 2026-04-21 after Phase 4*
+*Last updated: 2026-04-21 after Phase 5*
