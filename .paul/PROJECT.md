@@ -38,12 +38,13 @@ Developers using Claude Code get motivational, severity-tiered encouragement aut
 - [x] Prompt classifier with 5-tier desperation scoring — 16 tests, all passing — Phase 3
 - [x] Session tracker — 6 functions, real fs I/O, streak storage primitives — Phase 4
 - [x] UserPromptSubmit hook — stdin parse, classify, inject phrase, dry-run, session update — Phase 5
+- [x] Session report renderer — box-drawing output, streak update, top files, most desperate prompt — Phase 6
 
 ### Active (In Progress)
-- [ ] Phase 6: Report Renderer — `report.js` with box-drawing output
+- [ ] Phase 7: CLI — `cli.js` handling install/uninstall/report subcommands
 
 ### Planned (Next)
-- Phase 7: CLI — `cli.js` handling install/uninstall/report subcommands
+- Phase 8: Launch — README, end-to-end verification, v1.0.0 tag
 - Phase 7: CLI — `cli.js` handling install/uninstall/report subcommands
 - Phase 8: Launch — README, end-to-end verification, v1.0.0 tag
 
@@ -85,6 +86,8 @@ Developers using Claude Code get motivational, severity-tiered encouragement aut
 | Streak increment logic lives in report.js | SessionEnd is the right moment to update streak; session.js provides storage only | 2026-04-21 | Active |
 | hook.js exits 0 on all paths | Hooks must be non-blocking — JSON parse error, classify error, any failure → exit 0 silently | 2026-04-21 | Active |
 | stdout is injection-only channel | No debug output ever written to stdout in hook.js — only the tier phrase or nothing | 2026-04-21 | Active |
+| personalBest guard: only show ✦ when personalBest > 0 | Prevents false "personal best" on first-ever run when streak=1=personalBest | 2026-04-21 | Active |
+| updateStreak() fires unconditionally in printReport() | Streak tracks days used, not blessed sessions — increments even on 0-blessing sessions | 2026-04-21 | Active |
 
 ## Success Metrics
 
@@ -115,4 +118,4 @@ Developers using Claude Code get motivational, severity-tiered encouragement aut
 
 ---
 *PROJECT.md — Updated when requirements or context change*
-*Last updated: 2026-04-21 after Phase 5*
+*Last updated: 2026-04-21 after Phase 6*
