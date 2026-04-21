@@ -17,7 +17,7 @@ Developers using Claude Code get motivational, severity-tiered encouragement aut
 | Attribute | Value |
 |-----------|-------|
 | Type | Application |
-| Version | 1.0.0 |
+| Version | 1.1.0 |
 | Status | Shipped |
 | Last Updated | 2026-04-21 |
 
@@ -31,6 +31,7 @@ Developers using Claude Code get motivational, severity-tiered encouragement aut
 - Session report renderer with box-drawing UI (printed at `SessionEnd` hook)
 - CLI installer/uninstaller that mutates Claude Code's `~/.claude/settings.json`
 - Dry-run mode via `PLS_FIX_DRY_RUN=true` env var
+- Runtime pause/resume via `/pls-fix-pause` and `/pls-fix-resume` slash commands
 
 ### Validated (Shipped)
 - [x] IMPLEMENTATION-PLAN.md — complete technical spec for all 8 build phases — Phase 1
@@ -41,12 +42,13 @@ Developers using Claude Code get motivational, severity-tiered encouragement aut
 - [x] Session report renderer — box-drawing output, streak update, top files, most desperate prompt — Phase 6
 - [x] CLI installer/uninstaller — install/uninstall/report subcommands, settings.json mutation, --dry-run — Phase 7
 - [x] README + v1.0.0 release — documentation complete, version tagged — Phase 8
+- [x] Pause/resume injection toggle — `/pls-fix-pause` + `/pls-fix-resume` slash commands, flag file mechanism — Phase 9
 
 ### Active (In Progress)
-None — v1.0.0 complete.
+None — v1.1.0 complete.
 
 ### Planned (Next)
-None — all phases shipped.
+None.
 
 ### Out of Scope
 - Windows support — deferred post-v1 (Claude Code config paths differ on Windows)
@@ -91,6 +93,9 @@ None — all phases shipped.
 | `_pls-fix: true` on outer hook entry | Outer entry (with matcher+hooks) is the array element — filter at that level is simpler than traversing inner arrays | 2026-04-21 | Active |
 | isAlreadyInstalled() guard in cli.js | Prevents duplicate hook entries on repeated install calls | 2026-04-21 | Active |
 | Empty hook arrays deleted on uninstall | Keeps settings.json clean — no leftover empty arrays | 2026-04-21 | Active |
+| `~/.pls-fix/paused` flag file for pause toggle | Presence = paused; no config mutation needed; persists across hook invocations | 2026-04-21 | Active |
+| updateSession() unconditional despite pause | Pause suppresses injection only, not tracking — stats remain accurate | 2026-04-21 | Active |
+| Absolute paths baked into slash command files at install | npx path varies; baking at install time is stable and immediately correct | 2026-04-21 | Active |
 
 ## Success Metrics
 
@@ -121,4 +126,4 @@ None — all phases shipped.
 
 ---
 *PROJECT.md — Updated when requirements or context change*
-*Last updated: 2026-04-21 after Phase 8 — v1.0.0 shipped*
+*Last updated: 2026-04-21 after Phase 9 — v1.1.0 shipped*

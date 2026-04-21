@@ -4,11 +4,15 @@
 // UserPromptSubmit hook — invoked by Claude Code on every user prompt submission.
 // Reads JSON from stdin, classifies prompt, injects tier phrase via stdout.
 
+const fs = require('fs');
+const os = require('os');
+const path = require('path');
 const { classify } = require('./classifier');
 const tiers = require('./tiers');
 const { updateSession, readSession } = require('./session');
 
 const DRY_RUN = process.env.PLS_FIX_DRY_RUN === 'true';
+const PAUSED_FILE = path.join(os.homedir(), '.pls-fix', 'paused');
 
 let raw = '';
 process.stdin.on('data', chunk => { raw += chunk; });
@@ -36,7 +40,7 @@ process.stdin.on('end', () => {
     process.exit(0);
   }
 
-  if (result.shouldInject) {
+  if (result.shouldInject && !fs.existsSync(PAUSED_FILE)) {
     const phrase = tiers[result.tier];
     if (DRY_RUN) {
       process.stderr.write(

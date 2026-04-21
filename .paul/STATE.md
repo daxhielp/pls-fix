@@ -5,19 +5,19 @@
 See: .paul/PROJECT.md (updated 2026-04-21)
 
 **Core value:** Developers get motivational, severity-tiered encouragement auto-injected into fix/debug prompts — preventing mistakes via the Optimistic Attribution Model™
-**Current focus:** v1.0.0 COMPLETE — all 8 phases shipped
+**Current focus:** v1.1.0 COMPLETE — pause toggle shipped
 
 ## Current Position
 
-Milestone: v1.0.0 Initial Release — COMPLETE
-Phase: 8 of 8 (Launch) — Complete
-Plan: 08-01 complete
+Milestone: v1.1.0 Pause Toggle — COMPLETE
+Phase: 9 of 9 (Pause Toggle) — Complete
+Plan: 09-01 complete
 Status: Milestone complete — ready for npm publish or next milestone
-Last activity: 2026-04-21 — Phase 8 complete, v1.0.0 tagged
+Last activity: 2026-04-21 — Phase 9 complete, v1.1.0 tagged
 
 Progress:
 - Milestone: [██████████] 100% ✓
-- Phase 8: [██████████] 100% ✓
+- Phase 9: [██████████] 100% ✓
 
 ## Loop Position
 
@@ -40,6 +40,8 @@ PLAN ──▶ APPLY ──▶ UNIFY
 - **`_pls-fix: true` on outer hook entry** — filter at array level on uninstall
 - **isAlreadyInstalled() guard** — prevents duplicate hook entries on repeated install
 - **README tier customization via `npm install -g`** — npx cache is ephemeral
+- **`~/.pls-fix/paused` flag file** — presence = paused; no config mutation; updateSession() still fires
+- **Absolute paths baked into slash command .md files at install time** — stable across npx/global installs
 
 ### Deferred Issues
 
@@ -56,12 +58,12 @@ None.
 ## Session Continuity
 
 Last session: 2026-04-21
-Stopped at: v1.0.0 complete — README, version bump, git tag v1.0.0
+Stopped at: v1.1.0 complete — pause toggle, slash commands
 Next action: `npm publish` when ready to release to registry
-Resume file: .paul/phases/08-launch/08-01-SUMMARY.md
+Resume file: .paul/phases/09-pause-toggle/09-01-SUMMARY.md
 
 ### Git State
-Last commit: 026e37d (chore(release): v1.0.0)
+Last commit: (pending — phase commit)
 Tag: v1.0.0
 Branch: master
 Feature branches merged: none

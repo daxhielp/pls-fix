@@ -6,6 +6,12 @@ Build `pls-fix` from zero to npm-published v1.0.0: a Claude Code PreToolUse hook
 
 ## Current Milestone
 
+**v1.1.0 Pause Toggle** (v1.1.0)
+Status: Complete
+Phases: 1 of 1 complete
+
+## Completed Milestones
+
 **v1.0.0 Initial Release** (v1.0.0)
 Status: Complete
 Phases: 8 of 8 complete
@@ -22,6 +28,7 @@ Phases: 8 of 8 complete
 | 6 | Report Renderer | 1 | Complete | 2026-04-21 |
 | 7 | CLI | 1 | Complete | 2026-04-21 |
 | 8 | Launch | 1 | Complete | 2026-04-21 |
+| 9 | Pause Toggle | 1 | Complete | 2026-04-21 |
 
 ## Phase Details
 
@@ -167,5 +174,21 @@ Phases: 8 of 8 complete
 - [ ] 08-01: README + end-to-end verification + v1.0.0 tag
 
 ---
+
+### Phase 9: Pause Toggle
+
+**Goal:** Runtime pause/resume of pls-fix injection via Claude Code slash commands — no reinstall required
+**Depends on:** Phase 8 (v1.0.0 shipped)
+**Research:** None (mechanism fully defined)
+
+**Scope:**
+- `src/hook.js`: check `~/.pls-fix/paused` flag file before stdout injection
+- `cli.js`: `pause`/`resume` subcommands; `install` writes slash command files; `uninstall` removes them
+- Slash command files at `~/.claude/commands/pls-fix-pause.md` + `pls-fix-resume.md`
+
+**Plans:**
+- [ ] 09-01: Pause toggle implementation
+
+---
 *Roadmap created: 2026-04-20*
-*Last updated: 2026-04-20*
+*Last updated: 2026-04-21 — Phase 9 added*
