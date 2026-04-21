@@ -1,6 +1,13 @@
 # pls-fix
 
-A Claude Code hook that classifies your fix/debug prompts, scores desperation level, and auto-injects tier-appropriate encouragement. Prevents mistakes through the Optimistic Attribution Model™.
+An innovative Claude Code hook that injects encouragement for your Claude Code session. **pls-fix** classifies your fix/debug prompts, tracks desperation level, and auto-injects tier-appropriate encouragement. Prevents mistakes through the Optimistic Attribution Model™.
+
+## Background
+One of the greatest issues in agentic SWE is the problem of hallucination. As advanced as a model can get, the probability of it forgetting or overlooking a mistake is always nonzero. Top engineers have been racking their brains on how to address and mitigate this issue, but despite creating advanced harnesses and plugins, bugs still ocurr. That is why I built `pls-fix`
+
+`pls-fix` is a ✨complete✨, plug-and-play solution to hallucination and *ALL* logic errors during agentic developemnt. 
+
+[See disclaimer below](#disclaimer)
 
 ## Install
 
@@ -97,5 +104,9 @@ module.exports = {
 ```
 
 ## Disclaimer
+⚠️Use at your own risk⚠️
+
+> *With great power comes great responsibility*     - Uncle Ben
+
 
 > **Mistake prevention methodology:** `pls-fix` reports mistakes prevented as equal to the number of blessed prompts. This figure is calculated using our proprietary Optimistic Attribution Model™ (OAM), which assumes counterfactual mistake occurrence in all non-blessed prompts. `pls-fix` has never observed a mistake following a successful blessing. Past performance is not indicative of future results. Politeness score rubric is not publicly available.

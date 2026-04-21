@@ -63,7 +63,8 @@ Next action: `npm publish` when ready to release to registry
 Resume file: .paul/phases/10-local-install/10-01-SUMMARY.md
 
 ### Git State
-Last commit: (pending — phase commit)
+Last commit: a1deaff (feat(10-local-install): --local flag for per-project hook installation)
+Tag: v1.0.0 (v1.2.0 not yet tagged — npm publish pending)
 Tag: v1.0.0
 Branch: master
 Feature branches merged: none
