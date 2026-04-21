@@ -5,19 +5,19 @@
 See: .paul/PROJECT.md (updated 2026-04-21)
 
 **Core value:** Developers get motivational, severity-tiered encouragement auto-injected into fix/debug prompts — preventing mistakes via the Optimistic Attribution Model™
-**Current focus:** Phase 6 complete — all 6 source modules implemented; only CLI and launch remain
+**Current focus:** Phase 7 complete — all 7 modules done (classifier, tiers, session, hook, report, cli); only Launch remains
 
 ## Current Position
 
 Milestone: v1.0.0 Initial Release
-Phase: 7 of 8 (CLI) — Not started
+Phase: 8 of 8 (Launch) — Not started
 Plan: Not started
 Status: Ready to plan
-Last activity: 2026-04-21 — Phase 6 complete, transitioned to Phase 7
+Last activity: 2026-04-21 — Phase 7 complete, transitioned to Phase 8
 
 Progress:
-- Milestone: [████████░░] 75%
-- Phase 6: [██████████] 100% ✓
+- Milestone: [█████████░] 87%
+- Phase 7: [██████████] 100% ✓
 
 ## Loop Position
 
@@ -40,8 +40,11 @@ PLAN ──▶ APPLY ──▶ UNIFY
 - **DRY_RUN still calls updateSession()** — tracking continues when injection skipped
 - **updateStreak() unconditional** — fires on every report call, tracks days used not blessings
 - **personalBest guard** — ✦ flag only when personalBest > 0 (avoids first-run false positive)
-- **filePleaCounts keyed by cwd** — Phase 7 CLI registers absolute paths; cwd key is directory
+- **filePleaCounts keyed by cwd** — CLI registers absolute paths; cwd key is directory
 - **Streak increment logic in report.js** — session.js provides storage only
+- **`_pls-fix: true` on outer hook entry** — filter at array level, not inner hooks array
+- **isAlreadyInstalled() guard** — prevents duplicate hook entries on repeated install
+- **Empty hook arrays deleted on uninstall** — keeps settings.json clean
 
 ### Deferred Issues
 
@@ -57,12 +60,12 @@ None.
 ## Session Continuity
 
 Last session: 2026-04-21
-Stopped at: Phase 6 complete — all src/ modules done; ready for Phase 7 CLI
-Next action: /paul:plan for Phase 7 (CLI)
-Resume file: .paul/phases/06-report-renderer/06-01-SUMMARY.md
+Stopped at: Phase 7 complete — all modules done; ready for Phase 8 Launch
+Next action: /paul:plan for Phase 8 (Launch)
+Resume file: .paul/phases/07-cli/07-01-SUMMARY.md
 
 ### Git State
-Last commit: (Phase 6 commit pending)
+Last commit: (Phase 7 commit pending)
 Branch: master
 Feature branches merged: none
 

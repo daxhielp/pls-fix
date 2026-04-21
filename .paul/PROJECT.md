@@ -39,13 +39,12 @@ Developers using Claude Code get motivational, severity-tiered encouragement aut
 - [x] Session tracker — 6 functions, real fs I/O, streak storage primitives — Phase 4
 - [x] UserPromptSubmit hook — stdin parse, classify, inject phrase, dry-run, session update — Phase 5
 - [x] Session report renderer — box-drawing output, streak update, top files, most desperate prompt — Phase 6
+- [x] CLI installer/uninstaller — install/uninstall/report subcommands, settings.json mutation, --dry-run — Phase 7
 
 ### Active (In Progress)
-- [ ] Phase 7: CLI — `cli.js` handling install/uninstall/report subcommands
+- [ ] Phase 8: Launch — README, end-to-end verification, v1.0.0 tag
 
 ### Planned (Next)
-- Phase 8: Launch — README, end-to-end verification, v1.0.0 tag
-- Phase 7: CLI — `cli.js` handling install/uninstall/report subcommands
 - Phase 8: Launch — README, end-to-end verification, v1.0.0 tag
 
 ### Out of Scope
@@ -88,15 +87,18 @@ Developers using Claude Code get motivational, severity-tiered encouragement aut
 | stdout is injection-only channel | No debug output ever written to stdout in hook.js — only the tier phrase or nothing | 2026-04-21 | Active |
 | personalBest guard: only show ✦ when personalBest > 0 | Prevents false "personal best" on first-ever run when streak=1=personalBest | 2026-04-21 | Active |
 | updateStreak() fires unconditionally in printReport() | Streak tracks days used, not blessed sessions — increments even on 0-blessing sessions | 2026-04-21 | Active |
+| `_pls-fix: true` on outer hook entry | Outer entry (with matcher+hooks) is the array element — filter at that level is simpler than traversing inner arrays | 2026-04-21 | Active |
+| isAlreadyInstalled() guard in cli.js | Prevents duplicate hook entries on repeated install calls | 2026-04-21 | Active |
+| Empty hook arrays deleted on uninstall | Keeps settings.json clean — no leftover empty arrays | 2026-04-21 | Active |
 
 ## Success Metrics
 
 | Metric | Target | Current | Status |
 |--------|--------|---------|--------|
-| `npx pls-fix install` end-to-end | Works in test Claude Code env | - | Not started |
+| `npx pls-fix install` end-to-end | Works in test Claude Code env | install/uninstall verified via CLAUDE_CONFIG_DIR isolation | ✅ Complete |
 | Classifier test coverage | 8+ cases, all passing | 16 cases, all passing | ✅ Complete |
 | All 5 tiers activate correctly | Verified via test suite | Tiers 1–5 boundary-tested | ✅ Complete |
-| Dry-run mode outputs correctly | Logs to stderr, no injection | - | Not started |
+| Dry-run mode outputs correctly | Logs to stderr, no injection | --dry-run flag wired in cli.js + hook.js | ✅ Complete |
 
 ## Tech Stack / Tools
 
@@ -118,4 +120,4 @@ Developers using Claude Code get motivational, severity-tiered encouragement aut
 
 ---
 *PROJECT.md — Updated when requirements or context change*
-*Last updated: 2026-04-21 after Phase 6*
+*Last updated: 2026-04-21 after Phase 7*
