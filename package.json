@@ -12,6 +12,11 @@
   "scripts": {
     "test": "node --test src/classifier.test.js"
   },
-  "keywords": ["claude", "claude-code", "hooks", "developer-tools"],
+  "keywords": [
+    "claude",
+    "claude-code",
+    "hooks",
+    "developer-tools"
+  ],
   "license": "MIT"
 }
