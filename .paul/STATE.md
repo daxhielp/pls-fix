@@ -9,15 +9,15 @@ See: .paul/PROJECT.md (updated 2026-04-21)
 
 ## Current Position
 
-Milestone: v1.1.0 Pause Toggle — COMPLETE
-Phase: 9 of 9 (Pause Toggle) — Complete
-Plan: 09-01 complete
+Milestone: v1.2.0 Local Install — COMPLETE
+Phase: 10 of 10 (Local Install) — Complete
+Plan: 10-01 complete
 Status: Milestone complete — ready for npm publish or next milestone
-Last activity: 2026-04-21 — Phase 9 complete, v1.1.0 tagged
+Last activity: 2026-04-21 — Phase 10 complete, v1.2.0
 
 Progress:
 - Milestone: [██████████] 100% ✓
-- Phase 9: [██████████] 100% ✓
+- Phase 10: [██████████] 100% ✓
 
 ## Loop Position
 
@@ -58,9 +58,9 @@ None.
 ## Session Continuity
 
 Last session: 2026-04-21
-Stopped at: v1.1.0 complete — pause toggle, slash commands
+Stopped at: v1.2.0 complete — local install support
 Next action: `npm publish` when ready to release to registry
-Resume file: .paul/phases/09-pause-toggle/09-01-SUMMARY.md
+Resume file: .paul/phases/10-local-install/10-01-SUMMARY.md
 
 ### Git State
 Last commit: (pending — phase commit)

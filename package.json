@@ -1,6 +1,6 @@
 {
   "name": "pls-fix",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "Motivational severity-tiered phrase injection for Claude Code fix/debug prompts.",
   "main": "cli.js",
   "bin": {

@@ -7,8 +7,11 @@ const path = require('path');
 
 const [,, subcommand, ...args] = process.argv;
 const DRY_RUN = args.includes('--dry-run');
+const LOCAL = args.includes('--local');
 
-const configDir = process.env.CLAUDE_CONFIG_DIR || path.join(os.homedir(), '.claude');
+const configDir = LOCAL
+  ? path.join(process.cwd(), '.claude')
+  : (process.env.CLAUDE_CONFIG_DIR || path.join(os.homedir(), '.claude'));
 const configFile = path.join(configDir, 'settings.json');
 
 const SESSION_FILE = path.join(os.tmpdir(), 'pls-fix-session.json');
@@ -51,7 +54,7 @@ switch (subcommand) {
       if (!config.hooks) config.hooks = {};
 
       if (isAlreadyInstalled(config)) {
-        console.log('[pls-fix] pls-fix is already installed.');
+        console.log(`[pls-fix] pls-fix is already installed${LOCAL ? ' locally' : ''}.`);
         process.exit(0);
       }
 
@@ -86,7 +89,7 @@ switch (subcommand) {
         `Run this command to resume pls-fix injection:\n\n\`\`\`bash\n${nodeExec} ${cliPath} resume\n\`\`\`\n\nAfter it completes, reply only with: "pls-fix injection resumed ✓"\n`
       );
 
-      console.log('[pls-fix] Installed! Claude Code will now bless your fix/debug prompts.');
+      console.log(`[pls-fix] Installed! (${LOCAL ? 'local' : 'global'}) Claude Code will now bless your fix/debug prompts.`);
       console.log(`[pls-fix] Hook registered at: ${configFile}`);
       console.log('[pls-fix] Slash commands registered: /pls-fix-pause, /pls-fix-resume');
       if (DRY_RUN) console.log('[pls-fix] Dry-run mode: ON');
@@ -104,12 +107,12 @@ switch (subcommand) {
       try {
         config = JSON.parse(fs.readFileSync(configFile, 'utf8'));
       } catch {
-        console.log('[pls-fix] pls-fix not installed.');
+        console.log(`[pls-fix] pls-fix not installed${LOCAL ? ' locally' : ''}.`);
         process.exit(0);
       }
 
       if (!config.hooks) {
-        console.log('[pls-fix] pls-fix not installed.');
+        console.log(`[pls-fix] pls-fix not installed${LOCAL ? ' locally' : ''}.`);
         process.exit(0);
       }
 

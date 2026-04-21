@@ -17,7 +17,7 @@ Developers using Claude Code get motivational, severity-tiered encouragement aut
 | Attribute | Value |
 |-----------|-------|
 | Type | Application |
-| Version | 1.1.0 |
+| Version | 1.2.0 |
 | Status | Shipped |
 | Last Updated | 2026-04-21 |
 
@@ -32,6 +32,7 @@ Developers using Claude Code get motivational, severity-tiered encouragement aut
 - CLI installer/uninstaller that mutates Claude Code's `~/.claude/settings.json`
 - Dry-run mode via `PLS_FIX_DRY_RUN=true` env var
 - Runtime pause/resume via `/pls-fix-pause` and `/pls-fix-resume` slash commands
+- Local (per-project) install via `--local` flag targeting `cwd/.claude/settings.json`
 
 ### Validated (Shipped)
 - [x] IMPLEMENTATION-PLAN.md — complete technical spec for all 8 build phases — Phase 1
@@ -43,9 +44,10 @@ Developers using Claude Code get motivational, severity-tiered encouragement aut
 - [x] CLI installer/uninstaller — install/uninstall/report subcommands, settings.json mutation, --dry-run — Phase 7
 - [x] README + v1.0.0 release — documentation complete, version tagged — Phase 8
 - [x] Pause/resume injection toggle — `/pls-fix-pause` + `/pls-fix-resume` slash commands, flag file mechanism — Phase 9
+- [x] Local install — `--local` flag routes to `cwd/.claude/settings.json`; COMMANDS_DIR stays global — Phase 10
 
 ### Active (In Progress)
-None — v1.1.0 complete.
+None — v1.2.0 complete.
 
 ### Planned (Next)
 None.
@@ -96,6 +98,8 @@ None.
 | `~/.pls-fix/paused` flag file for pause toggle | Presence = paused; no config mutation needed; persists across hook invocations | 2026-04-21 | Active |
 | updateSession() unconditional despite pause | Pause suppresses injection only, not tracking — stats remain accurate | 2026-04-21 | Active |
 | Absolute paths baked into slash command files at install | npx path varies; baking at install time is stable and immediately correct | 2026-04-21 | Active |
+| `--local` routes configDir to `process.cwd()/.claude` | Matches Claude Code project-level settings convention | 2026-04-21 | Active |
+| COMMANDS_DIR always global regardless of --local | Slash commands are user-level only in Claude Code; no project-level commands dir | 2026-04-21 | Active |
 
 ## Success Metrics
 
@@ -126,4 +130,4 @@ None.
 
 ---
 *PROJECT.md — Updated when requirements or context change*
-*Last updated: 2026-04-21 after Phase 9 — v1.1.0 shipped*
+*Last updated: 2026-04-21 after Phase 10 — v1.2.0 shipped*

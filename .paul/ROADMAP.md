@@ -6,11 +6,15 @@ Build `pls-fix` from zero to npm-published v1.0.0: a Claude Code PreToolUse hook
 
 ## Current Milestone
 
-**v1.1.0 Pause Toggle** (v1.1.0)
+**v1.2.0 Local Install** (v1.2.0)
 Status: Complete
 Phases: 1 of 1 complete
 
-## Completed Milestones
+## Completed Milestones (prior)
+
+**v1.1.0 Pause Toggle** (v1.1.0)
+Status: Complete
+Phases: 1 of 1 complete
 
 **v1.0.0 Initial Release** (v1.0.0)
 Status: Complete
@@ -29,6 +33,7 @@ Phases: 8 of 8 complete
 | 7 | CLI | 1 | Complete | 2026-04-21 |
 | 8 | Launch | 1 | Complete | 2026-04-21 |
 | 9 | Pause Toggle | 1 | Complete | 2026-04-21 |
+| 10 | Local Install | 1 | Complete | 2026-04-21 |
 
 ## Phase Details
 

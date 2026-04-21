@@ -11,7 +11,19 @@ npx pls-fix install
 Registers `pls-fix` hooks into your Claude Code setup (`~/.claude/settings.json`).
 Restart Claude Code after installing to activate.
 
-To uninstall:
+To install for the current project only (writes to `.claude/settings.json` in the current directory):
+
+```bash
+npx pls-fix install --local
+```
+
+Local and global installs can coexist. Uninstall locally with:
+
+```bash
+npx pls-fix uninstall --local
+```
+
+To uninstall globally:
 
 ```bash
 npx pls-fix uninstall
@@ -52,6 +64,8 @@ npx pls-fix report
 ```
 
 ## Dry-run mode
+
+`--local` and `--dry-run` can be combined: `npx pls-fix install --local --dry-run`
 
 Install with `--dry-run` to track sessions without injecting phrases:
 
