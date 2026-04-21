@@ -17,8 +17,8 @@ Developers using Claude Code get motivational, severity-tiered encouragement aut
 | Attribute | Value |
 |-----------|-------|
 | Type | Application |
-| Version | 0.0.0 |
-| Status | Building |
+| Version | 1.0.0 |
+| Status | Shipped |
 | Last Updated | 2026-04-21 |
 
 ## Requirements
@@ -40,12 +40,13 @@ Developers using Claude Code get motivational, severity-tiered encouragement aut
 - [x] UserPromptSubmit hook — stdin parse, classify, inject phrase, dry-run, session update — Phase 5
 - [x] Session report renderer — box-drawing output, streak update, top files, most desperate prompt — Phase 6
 - [x] CLI installer/uninstaller — install/uninstall/report subcommands, settings.json mutation, --dry-run — Phase 7
+- [x] README + v1.0.0 release — documentation complete, version tagged — Phase 8
 
 ### Active (In Progress)
-- [ ] Phase 8: Launch — README, end-to-end verification, v1.0.0 tag
+None — v1.0.0 complete.
 
 ### Planned (Next)
-- Phase 8: Launch — README, end-to-end verification, v1.0.0 tag
+None — all phases shipped.
 
 ### Out of Scope
 - Windows support — deferred post-v1 (Claude Code config paths differ on Windows)
@@ -120,4 +121,4 @@ Developers using Claude Code get motivational, severity-tiered encouragement aut
 
 ---
 *PROJECT.md — Updated when requirements or context change*
-*Last updated: 2026-04-21 after Phase 7*
+*Last updated: 2026-04-21 after Phase 8 — v1.0.0 shipped*

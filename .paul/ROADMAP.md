@@ -7,8 +7,8 @@ Build `pls-fix` from zero to npm-published v1.0.0: a Claude Code PreToolUse hook
 ## Current Milestone
 
 **v1.0.0 Initial Release** (v1.0.0)
-Status: In progress
-Phases: 7 of 8 complete
+Status: Complete
+Phases: 8 of 8 complete
 
 ## Phases
 
@@ -21,7 +21,7 @@ Phases: 7 of 8 complete
 | 5 | Hook | 1 | Complete | 2026-04-21 |
 | 6 | Report Renderer | 1 | Complete | 2026-04-21 |
 | 7 | CLI | 1 | Complete | 2026-04-21 |
-| 8 | Launch | TBD | Not started | - |
+| 8 | Launch | 1 | Complete | 2026-04-21 |
 
 ## Phase Details
 
